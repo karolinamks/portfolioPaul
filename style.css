@@ -11,8 +11,32 @@ header {
 	z-index: 1;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#paul{
+	font-size: 50px;
+}
+
+.vertical-tab{
+	width: 15px;
+	border-top: 2px solid black;
+	margin: 10px 0;
+}
+
 .header-content{
-	position: relative;
+	position: absolute;
+	display: inline-block;
+	left: 50px;
+	top: 50px;
+	z-index: 4;
+	font-size: 50px;
+}
+
+.white{
+	color: white;
 }
 
 .menu{
@@ -21,6 +45,20 @@ header {
 	background-color: grey;
 	position: fixed;
 	top: 200px;
+}
+
+.menu-content{
+	position: absolute;
+	left: 50px;
+}
+
+.menu-link{
+	opacity: 0;
+	display: block;
+}
+
+.visible{
+	opacity: 1
 }
 
 .content{
@@ -51,6 +89,10 @@ header {
 	display: inline-block;
 	margin-right: 10px;
 	margin-bottom: 10px;
+}
+
+.title{
+	background-color: white;
 }
 
 .line{
@@ -112,4 +154,12 @@ header {
 	left: 50%;
 	width: 50%;
 	transform: translate(-50%, -50%);
+}
+
+#modal-title{
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 70px;
 }

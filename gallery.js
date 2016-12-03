@@ -2,14 +2,24 @@
 var modal = document.getElementById("modal")
 var pictures = document.getElementsByClassName("miniature")
 var modalPicture = document.getElementById("modal-picture")
+var modalTitle = document.getElementById("modal-title")
+var paul = document.getElementById("paul")
 
 // Declaration de fonctions
 var printModal = function(event){
+	//Affichage de la modale
 	modal.style.display = "block"
+
+	//Affichage du titre
 	var newPicSrc = event.srcElement.currentSrc
-	var picName = newPicSrc.split('.JPG')
-	picName = picName[0] + '-large'
-	modalPicture.src = picName + '.JPG'
+	var picUrl = newPicSrc.split('.JPG')
+	var picName = picUrl[0].split('/')
+	picName = picName[picName.length - 1].replace('_', ' ')
+	modalTitle.innerHTML = picName
+	picUrl = picUrl[0] + '-large'
+
+	//Affichage de la bonne image dans la modale
+	modalPicture.src = picUrl + '.JPG'
 }
 
 //Code
@@ -22,5 +32,6 @@ for (picture of pictures){
 }
 
 modal.addEventListener("click", function(){
+	//On enleve l'affichage de la modale
 	modal.style.display = "none"
 })
